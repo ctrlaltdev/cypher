@@ -12,12 +12,12 @@ const substitute = (str, offset, flipped = false) => {
     return str.split('').map(l => !l.match(/[A-Z]/) ? l : alpha[(alpha.indexOf(l) + offset) % (alpha.length)]).join('')
 }
 
-console.info('Substitutions')
+console.info('ROT')
 for (let i = 0 ; i < alpha.length ; i++) {
     console.info(i, substitute(cipher.toUpperCase(), i))
 }
 
-console.info('\nFlipped Substitutions')
+console.info('ATBASH ROT')
 for (let i = 0 ; i < alpha.length ; i++) {
     console.info(i, substitute(cipher.toUpperCase(), i, true))
 }
