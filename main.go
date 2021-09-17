@@ -17,7 +17,7 @@ var (
 	key      *string
 	offset   = flag.Int("o", 0, "Rotation offset")
 	polykey  = flag.String("k", "", "Polyalphabetic key")
-	reverse  = flag.Bool("r", false, "Try to verse encryption")
+	reverse  = flag.Bool("r", false, "Try to reverse encryption")
 )
 
 func main() {
@@ -38,6 +38,9 @@ func main() {
 
 	if *polykey != "" {
 		polykey := strings.ToUpper(*polykey)
+		key = &polykey
+	} else {
+		polykey := "A"
 		key = &polykey
 	}
 

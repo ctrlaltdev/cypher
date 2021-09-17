@@ -20,7 +20,6 @@ func polyalpha(cipher *string, key *string, reverse bool) *string {
 		} else {
 			offset = utils.AlphaMap[keylist[i%len(keylist)]] - 1
 		}
-		fmt.Println(offset)
 
 		res := rot.Sub(&l, offset, false)
 
